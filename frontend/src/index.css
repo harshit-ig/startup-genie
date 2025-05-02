@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+    "Helvetica Neue", Arial, sans-serif;
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-slate-900 text-white;
+  }
+  
+  /* Remove underlines from ALL links */
+  a {
+    text-decoration: none !important;
+  }
+  
+  /* Global top padding for all main content areas */
+  main {
+    padding-top: 6rem; /* This will ensure content doesn't get hidden under the navbar */
+  }
+  
+  /* Improve form elements styling */
+  input[type="checkbox"] {
+    @apply rounded text-blue-600 border-white/20 bg-white/5 focus:ring-blue-500;
+  }
+  
+  /* Prose styles for rich text content */
+  .prose {
+    @apply max-w-none;
+  }
+  
+  .prose h2 {
+    @apply text-xl font-bold mt-8 mb-4 text-white;
+  }
+  
+  .prose p {
+    @apply mb-4 text-slate-300;
+  }
+  
+  .prose ul {
+    @apply mb-4 list-disc pl-5 text-slate-300;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  /* Ensure links in prose have no underlines */
+  .prose a {
+    text-decoration: none !important;
+    @apply text-blue-400 hover:text-blue-300 transition-colors;
+  }
+}
+
+/* Animation utilities */
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Extra utility class to force no underlines */
+.no-underline {
+  text-decoration: none !important;
+}
